@@ -1,9 +1,0 @@
-**Today: 2025-02-17**
-I 
-:white_square_button: Class: Computer Networks
-:white_square_button: Exercise
-:white_square_button: Write Letters
-:white_square_button: Work on Amaweb
-:white_square_button: Beej's Socket Programming
-:white_square_button: Review subjects
-:white_square_button: Clean up python script

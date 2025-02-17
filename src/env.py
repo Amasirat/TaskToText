@@ -11,11 +11,11 @@ def get_today():
 
 def get_env(key: str):
     with open(ENV_FILE, "r") as envFile:
-        line = envFile.read()
-        pair = line.split('=')
-        if(pair[0] == key):
-            return pair[1]
-        else:
-            raise Exception(f"Could not find needed Environment Variable {key}")
+        for line in envFile:
+            pair = line.split('=')
+            if(pair[0] == key):
+                return pair[1]
+        
+    raise Exception(f"Could not find needed Environment Variable {key}")
 
 API_TOKEN = get_env("API_TOKEN")
