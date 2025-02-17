@@ -1,4 +1,3 @@
-import os
 from todoist_api_python.api import TodoistAPI
 from env import API_TOKEN, get_today, CHECKBOX, OUT_DIR
 
@@ -9,7 +8,8 @@ def limit_to_active_tasks(tasks: list) -> list:
             active_tasks.append(tasks[i])
     return active_tasks
 
-def create_text(tasks: list, reflection=""):
+# Takes in a list and outputs a text file on disk.
+def create_text(tasks: list, reflection="") -> None:
     text_to_write = f"**Today: {get_today()}**\n{reflection}\n"
     for t in tasks:
         text_to_write += f"{CHECKBOX} {t.content}\n"
@@ -21,6 +21,7 @@ def main():
     api = TodoistAPI(API_TOKEN)
     
     tasks = limit_to_active_tasks(api.get_tasks())
+    # reflection is if I need to reflect on the day forward or not
     reflection = ""
     choice = input("would you like to reflect? ")
     if(choice != "n"):
