@@ -7,7 +7,7 @@ CHECKMARK = ":white_check_mark:"
 def get_today():
     today = str(datetime.now())
     date = today.split(' ')
-    return date[0]
+    return str(date[0])
 
 def get_env(key: str):
     with open(ENV_FILE, "r") as envFile:
