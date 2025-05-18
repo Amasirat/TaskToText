@@ -1,8 +1,8 @@
 from datetime import datetime
 ENV_FILE = ".env"
 OUT_DIR = "out.txt"
-CHECKBOX = ":white_square_button:"
-CHECKMARK = ":white_check_mark:"
+CHECKBOX = ":todo:"
+CHECKMARK = ":done:"
 
 def get_today():
     today = str(datetime.now())
